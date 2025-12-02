@@ -1,0 +1,489 @@
+/*
+ * RALEHUMO CORPORATION (PTY) LTD - CUSTOM STYLES
+ * Theme: Industrial, Sleek, Professional
+ * Base Fonts: Metropolis (via style.css)
+ */
+
+/* Define Ralehumo-specific colors */
+:root {
+    --ralehumo-primary: #1D3557; /* Deep Corporate Blue/Slate */
+    --ralehumo-secondary: #E63946; /* Subtle Action Red/Orange */
+    --ralehumo-accent: #A8DADC; /* Light Accent for text/icons */
+    --ralehumo-background-light: #F8F9FA;
+    --ralehumo-background-dark: #3A3A3A;
+    --white-color: #ffffff;
+}
+
+/* Apply base styling to the main content area */
+body {
+    background-color: var(--ralehumo-background-light);
+    color: var(--ralehumo-primary);
+}
+
+/* Adjust general headings and buttons to match the theme */
+.section-heading {
+    color: var(--ralehumo-primary);
+    font-weight: bold;
+}
+
+.custom-btn {
+    background-color: var(--ralehumo-secondary);
+    border-color: var(--ralehumo-secondary);
+    color: var(--white-color);
+    padding: 0.75rem 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.custom-btn:hover,
+.custom-btn:focus {
+    background-color: var(--ralehumo-primary);
+    border-color: var(--ralehumo-primary);
+    color: var(--ralehumo-accent);
+}
+
+.btn-outline-light.custom-btn {
+    /* Special styling for hero button */
+    background: transparent;
+    border-color: var(--white-color);
+    color: var(--white-color);
+}
+
+.btn-outline-light.custom-btn:hover {
+    background-color: var(--ralehumo-secondary);
+    border-color: var(--ralehumo-secondary);
+    color: var(--white-color);
+}
+
+/*---------------------------------------
+  SITE HEADER              
+-----------------------------------------*/
+.site-headerz {
+  background: var(--ralehumo-secondary);
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+
+.site-headerz p,
+.site-headerz p a,
+.site-headerz .social-icon-link {
+  color: var(--ralehumo-background-light);
+  font-size: var(--copyright-font-size);
+}
+
+
+
+/* --- HERO SECTION --- */
+.ralehumo-hero {
+    /* Use the uploaded image for the background */
+    background-image: url('../images/ralehumo-construction.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* For a nice parallax effect */
+    color: var(--white-color);
+    padding: 10rem 0 8rem 0; /* Increased padding for better vertical space */
+    margin-bottom: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Dark Overlay for Hero Text Readability */
+.ralehumo-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Dark semi-transparent overlay */
+    background-color: rgba(29, 53, 87, 0.75); /* Dark Corporate Blue with transparency */
+    z-index: 1;
+}
+
+.ralehumo-hero .container {
+    z-index: 2; /* Ensure content is above the overlay */
+}
+
+.hero-title {
+    font-weight: bold;
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--ralehumo-accent);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* --- OVERVIEW SECTION --- */
+.overview-section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.image-box {
+    text-align: center;
+}
+
+.image-box img {
+    max-height: 500px;
+    object-fit: cover;
+    width: 100%;
+    border: 5px solid var(--ralehumo-primary);
+}
+
+
+/* --- DIVISIONS SECTION (Features) --- */
+.divisions-section {
+    background-color: var(--ralehumo-background-light);
+}
+
+.feature-box {
+    background-color: var(--white-color);
+    border: 1px solid #e9ecef;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    height: 100%;
+    transition: all 0.3s ease-in-out;
+}
+
+.feature-box:hover {
+    background-color: var(--ralehumo-primary);
+    color: var(--white-color);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(29, 53, 87, 0.2);
+}
+
+.feature-box:hover .feature-icon {
+    color: var(--ralehumo-accent) !important;
+}
+
+.feature-box:hover .feature-title {
+    color: var(--white-color) !important;
+}
+
+.feature-icon {
+    font-size: 3rem; /* Increased size */
+    color: var(--ralehumo-secondary);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.feature-title {
+    font-weight: 700;
+    color: var(--ralehumo-primary);
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+}
+
+.feature-description {
+    font-weight: 300;
+}
+
+
+/* --- CSR / PARTNERS SECTION --- */
+
+/* Apply the background image, fixed property, and color overlay directly to the section (using .csr-section) */
+.csr-section {
+    /* This line applies the dark overlay (Primary Blue: #1D3557 at 80%) over the image */
+    background-image: linear-gradient(rgba(29, 53, 87, 0.8), rgba(29, 53, 87, 0.8)), 
+                      url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1176&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    
+    /* Ensure the image covers the entire section and stays fixed for a professional parallax effect */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: var(--white-color); /* Ensure all text in the section is white */
+}
+
+/* Original class for solid color (kept for consistency/fallback, though .csr-section overrides it) */
+.bg-dark-industrial {
+    background-color: var(--ralehumo-secondary);
+}
+
+.csr-box {
+    /* Keep existing styling for the inner box */
+    color: var(--white-color);
+    padding: 3rem;
+    border-radius: 0.75rem;
+    border: 2px solid var(--ralehumo-accent); /* Adding a subtle border */
+}
+
+.text-light-accent {
+    color: var(--ralehumo-accent) !important;
+}
+
+/* UPDATED: Styling for the tags using the prominent red color (secondary) */
+.partner-tag {
+    display: inline-block;
+    background-color: var(--ralehumo-secondary); /* Use the red color for the tags */
+    color: var(--white-color); /* White text on the red tag */
+    padding: 0.5rem 1.25rem;
+    margin: 0.5rem 0.5rem 0.5rem 0;
+    border-radius: 50px; /* Modern, pill-shaped tags */
+    font-weight: 600; 
+    font-size: 0.9rem;
+    border: none; /* Removed unnecessary border */
+    transition: background-color 0.3s;
+}
+
+.partner-tag:hover {
+    background-color: var(--ralehumo-primary); /* Subtle hover to the primary blue */
+}
+
+.partner-highlight {
+    background-color: var(--ralehumo-secondary);
+    color: var(--white-color);
+    font-weight: 700;
+}
+
+/* --- CONTACT CARD SECTION --- */
+.contact-card-section {
+    padding-bottom: 5rem; /* Ensure space before footer */
+}
+
+.contact-card {
+    background-color: var(--white-color);
+    border: 1px solid #e0e0e0;
+    /* Use the corporate primary color for a stronger visual cue */
+    border-top: 5px solid var(--ralehumo-primary);
+}
+
+.contact-card-title {
+    color: var(--ralehumo-primary);
+    font-weight: 700;
+    font-size: 1.8rem;
+}
+
+.form-floating label {
+    color: var(--ralehumo-primary);
+}
+
+/* Ensure form controls look good on the card */
+.form-control {
+    border-radius: 0.5rem;
+    border: 1px solid #ced4da;
+    padding: 1rem 0.75rem;
+}
+
+.form-control:focus {
+    border-color: var(--ralehumo-secondary);
+    box-shadow: 0 0 0 0.25rem rgba(230, 57, 70, 0.25);
+}
+
+/* --- FOOTER STYLING REFINEMENT (using existing style.css classes) --- */
+.site-footer {
+    background-color: var(--ralehumo-primary); /* Use primary color for footer */
+    color: var(--white-color);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.footer-logo {
+    height: 50px;
+    width: auto;
+    filter: brightness(0) invert(1); /* Ensure logo is visible on dark background */
+}
+
+.social-icon-link {
+    color: var(--ralehumo-accent);
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.social-icon-link:hover {
+    color: var(--ralehumo-secondary);
+}
+
+.contact-info a {
+    color: var(--ralehumo-accent);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 767.98px) {
+    .ralehumo-hero {
+        padding: 8rem 0 5rem 0;
+        background-attachment: scroll; /* Disable fixed background on mobile */
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .csr-box {
+        padding: 2rem 1.5rem;
+    }
+}
+
+/* --- Corporate Footer Styling (New Professional Design) --- */
+
+.corporate-footer {
+    /* Using a dark color like the professional examples */
+    background-color: #212529 !important; /* Dark background */
+    color: #fff;
+    font-size: 0.95rem;
+}
+
+.footer-corporate-logo {
+    max-width: 180px; /* Ensure the logo is large enough to be seen */
+    height: auto;
+    display: block; /* Important for proper margin and sizing */
+    /* If the logo image itself is very light, you might need a slight shadow or border for contrast on a dark background */
+}
+
+.footer-heading {
+    color: #ffffff; /* White heading color */
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding-bottom: 5px;
+    border-bottom: 2px solid var(--custom-color-secondary); /* Use your theme's secondary color */
+    display: inline-block;
+}
+
+.footer-list li a {
+    color: rgba(255, 255, 255, 0.75) !important; /* Light grey for links */
+    transition: color 0.3s;
+    line-height: 2.2; /* Spacing out the links */
+}
+
+.footer-list li a:hover {
+    color: var(--custom-color-primary) !important; /* Highlight on hover (using your primary theme color) */
+}
+
+/* Style for the contact icons */
+.contact-group i {
+    color: var(--custom-color-primary); /* Use your primary theme color for icons */
+    font-size: 1rem;
+}
+
+/* Styling the map iframe */
+.corporate-footer iframe {
+    border-radius: 6px;
+    filter: grayscale(80%); /* Optional: Make the map look more monochromatic/professional */
+}
+
+.corporate-footer .border-top {
+    border-color: rgba(255, 255, 255, 0.1) !important; /* Light separator line */
+}
+
+/* --- About Us Section Styling (Modern/Sleek Look) --- */
+.about-us-section {
+    position: relative;
+    overflow: hidden; /* Hide the parts of the pattern that flow out */
+    background-color: var(--ralehumo-background-light);
+}
+
+.section-overview {
+    /* Subtle line accent */
+    border-left: 5px solid var(--ralehumo-secondary);
+    padding-left: 20px;
+}
+
+.mission-box, .vision-box {
+    border: 1px solid rgba(29, 53, 87, 0.1); /* Light border using primary color opacity */
+    background-color: var(--white-color);
+    transition: all 0.3s ease;
+}
+
+.mission-box:hover, .vision-box:hover {
+    /* Slight lift on hover */
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05) !important;
+}
+
+.legal-list li {
+    font-size: 0.95rem;
+    color: var(--ralehumo-primary);
+}
+
+/* GRADIENT LINE/PATTERN STYLING (Inspired by video reference) */
+.about-image-wrapper {
+    position: relative;
+    border-radius: 0.5rem;
+}
+
+/* The Gradient Pattern */
+.gradient-pattern {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    z-index: -1;
+    /* Diagonal gradient using Ralehumo primary and accent colors */
+    background: linear-gradient(135deg, var(--ralehumo-primary) 0%, var(--ralehumo-secondary) 100%);
+    opacity: 0.4;
+    animation: pulseGradient 4s infinite alternate; /* Subtle animation */
+}
+
+@keyframes pulseGradient {
+    from {
+        transform: scale(0.95) rotate(0deg);
+        opacity: 0.3;
+    }
+    to {
+        transform: scale(1.05) rotate(5deg);
+        opacity: 0.5;
+    }
+}
+
+/* --- STRATEGIC PARTNERS SECTION STYLING --- */
+
+/* Ensures the entire section has a distinct background */
+.partners-section {
+    background-color: var(--ralehumo-background-light); /* Light background for contrast */
+}
+
+/* Styling for the individual partner card */
+.partner-card {
+    /* Card Body */
+    background-color: var(--white-color);
+    padding: 2.5rem 2rem;
+    border-radius: 0.75rem; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
+    transition: all 0.3s ease;
+    height: 100%; /* Ensure all cards are the same height */
+    
+    /* Thin Outline (using secondary color for a light orange/red effect) */
+    border: 1px solid rgba(230, 57, 70, 0.4); /* Secondary color at 40% opacity for a thin, light outline */
+}
+
+/* Hover Effect: Make the card lift and highlight the outline */
+.partner-card:hover {
+    transform: translateY(-5px); /* Lift the card */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Stronger shadow */
+    border-color: var(--ralehumo-secondary); /* Solid secondary color outline on hover */
+}
+
+/* Styling for the icon */
+.partner-icon {
+    color: var(--ralehumo-secondary); /* Use the red/orange accent for the icon */
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+/* Styling for the title */
+.partner-title {
+    color: var(--ralehumo-primary); /* Dark blue/black text */
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Styling for the description text */
+.partner-description {
+    color: #495057; /* Dark gray for body text */
+    font-size: 0.95rem;
+}

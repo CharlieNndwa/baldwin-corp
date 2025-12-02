@@ -1,0 +1,228 @@
+/*-----------------------------------------------------------------
+    BHC CORPORATE STYLE (Inspired by Naspers/Remgro)
+-----------------------------------------------------------------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap');
+
+/* --- Corporate Variables --- */
+:root {
+    --primary-color: #007bff;        /* Core Blue (Tech/Primary Accent) */
+    --accent-color-industrial: #dc3545; /* Core Red (Industrial Accent) */
+    --text-dark: #202b3a;            /* Dark Text for Headings */
+    --text-secondary: #6c757d;       /* Muted Text */
+    --background-light: #f8f9fa;     /* Light gray/off-white background */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Mukta', sans-serif;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-dark);
+}
+
+/* --- Utility & General Styles --- */
+.section-padding {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+.section-heading {
+    font-family: var(--font-heading); 
+    font-size: 2.5rem;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+.section-sub-heading {
+    font-family: var(--font-body); 
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+.lead {
+    font-size: 1.15rem;
+    line-height: 1.6;
+}
+hr {
+    margin: 4rem 0 !important;
+    color: #e9ecef;
+    opacity: 1;
+}
+
+/* --- 1. HERO SECTION --- */
+.corporate-hero {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+.corporate-hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+.bhc-logo-box {
+    max-width: 70%;
+    height: auto;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* --- 2. MANDATE, VISION, MISSION, OBJECTIVES --- */
+.mandate-box {
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-top: 5px solid var(--primary-color);
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    height: 100%;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+.mandate-box:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-top-color: var(--accent-color-industrial);
+}
+.mandate-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+.strategic-objectives-list li {
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: var(--text-dark);
+    line-height: 1.5;
+}
+.strategic-objectives-list i {
+    color: var(--primary-color);
+}
+
+/* --- 3. CORE VALUES --- */
+.value-item {
+    background-color: #fff;
+    border-left: 3px solid var(--primary-color);
+    border-radius: 0.3rem;
+    height: 100%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+.value-item h4 {
+    font-family: var(--font-body);
+}
+
+/* --- 4. GOVERNANCE FRAMEWORK --- */
+.governance-card {
+    border: 1px solid #dee2e6;
+    border-left: 5px solid var(--accent-color-industrial);
+    border-radius: 0.3rem;
+    background-color: #fff;
+    height: 100%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+.governance-card i {
+    color: var(--accent-color-industrial);
+}
+.responsibilities-list li {
+    padding: 0.2rem 0;
+    color: #495057;
+}
+.committee-list li {
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px dashed #e9ecef;
+}
+
+/* --- 5. INVESTMENT AND FUNDING SERVICES --- */
+.investment-list {
+    font-size: 1.05rem;
+    color: #343a40;
+    margin-top: 1.5rem;
+}
+.investment-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+}
+.investment-list i {
+    color: var(--primary-color);
+}
+.investment-focus {
+    background-color: var(--text-dark); /* Dark, professional background */
+    color: #fff;
+    border-radius: 0.5rem;
+    padding: 2.5rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+.investment-focus i {
+    color: var(--primary-color);
+}
+
+
+/* --- 6. SUBSIDIARY COMPANIES --- */
+.subsidiary-card {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    transition: transform 0.3s ease;
+    text-align: center;
+    height: 100%;
+}
+.subsidiary-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+.subsidiary-card.tech-card {
+    border-top: 5px solid var(--primary-color);
+}
+.subsidiary-card.industrial-card {
+    border-top: 5px solid var(--accent-color-industrial);
+}
+.subsidiary-logo {
+    max-height: 50px;
+    width: auto;
+}
+
+/* --- 7. EXPERTISE AND COMPLIANCE --- */
+.expertise-list li,
+.compliance-frameworks li {
+    padding: 0.5rem 0;
+    font-size: 1rem;
+    font-weight: 500;
+    border-bottom: 1px dashed #e9ecef;
+}
+.expertise-list i {
+    color: var(--primary-color);
+}
+.compliance-frameworks i {
+    color: var(--accent-color-industrial);
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 992px) {
+    .corporate-hero {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+    .corporate-hero h1 {
+        font-size: 2.5rem;
+    }
+    .section-heading {
+        font-size: 2rem;
+    }
+    .bhc-logo-box {
+        max-width: 50%; /* Smaller on mobile */
+    }
+    .mandate-box, .governance-card, .investment-focus, .subsidiary-card {
+        padding: 1.5rem !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .section-padding {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+    .corporate-hero h1 {
+        font-size: 2rem;
+    }
+    .section-heading {
+        font-size: 1.8rem;
+    }
+    .strategic-objectives-list li {
+        text-align: left;
+    }
+}

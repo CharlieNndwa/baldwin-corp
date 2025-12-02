@@ -1,0 +1,765 @@
+/*
+ * BALDWIN TECHNOLOGIES (PTY) LTD - CUSTOM STYLES
+ * Theme: Light, Professional, High-Tech Corporate
+ * Framework: Designed to work with Bootstrap 5.
+ *
+ * NOTE: This file now includes inherited structural styles for the Ralehumo Header/Footer.
+ */
+
+/* Define the Light Corporate Palette as CSS Variables */
+:root {
+    /* Colors based on the provided snippet and Ralehumo's matching primary color */
+    --bt-primary: #1D3557;   /* Deep Corporate Blue (Navy) - Used for Footer BG & Text */
+    --bt-secondary: #A8DADC; /* Light Cyan/Slate Accent - Used for Form Borders */
+    --bt-accent: #457B9D;    /* Mid Blue Accent - Used for Icons & Hover States */
+    --bt-light: #F8F9FA;     /* Off-White/Light Background */
+    --white-color: #ffffff;
+}
+
+/* 0. Global Structure and Typography (Copied/Adapted from style.css for consistency) */
+body {
+    /* Assuming Metropolis font is loaded by an external dependency like style.css */
+    font-family: 'Metropolis', sans-serif;
+    color: var(--bt-primary);
+    background-color: var(--bt-light);
+}
+
+.section-padding {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+}
+
+.section-heading {
+    color: var(--bt-primary);
+    font-weight: 700;
+}
+
+/* 1. HEADER STYLING (site-header class, copied/adapted from Ralehumo HTML/CSS) */
+.site-header {
+    padding-top: 0.625rem; /* 10px */
+    padding-bottom: 0.625rem; /* 10px */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.site-header a,
+.site-header i {
+    color: var(--bt-primary); /* Corporate Navy color for contact info */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.site-header a:hover {
+    color: var(--bt-accent); /* Mid blue accent on hover */
+}
+
+/* 2. FOOTER STYLING (site-footer class, copied/adapted from Ralehumo HTML/CSS) */
+.site-footer {
+    background-color: var(--bt-primary); /* Dark Navy background */
+    color: var(--white-color);
+    padding-top: 3.125rem; /* 50px */
+    padding-bottom: 3.125rem; /* 50px */
+}
+
+.site-footer a {
+    text-decoration: none;
+}
+
+.footer-menu-link {
+    color: var(--white-color) !important;
+    opacity: 0.75;
+    transition: opacity 0.3s ease;
+}
+
+.footer-menu-link:hover {
+    opacity: 1;
+    color: var(--white-color) !important;
+}
+
+/* Style for the text-white-50 links commonly used in Bootstrap footers */
+.site-footer a.text-white-50:hover {
+    color: var(--bt-accent) !important;
+}
+
+/* --- NEW HERO SECTION STYLING --- */
+
+/* 3. Hero Section with Background Image and Dark Overlay */
+.hero-image-overlay {
+    /* Set the background image */
+    background-image: url('https://images.unsplash.com/photo-1531498860502-7c67cf02f657?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover; /* Cover the entire section */
+    background-position: center; /* Center the image */
+    position: relative;
+    color: var(--white-color); /* Default text color in the section should be white */
+    min-height: 80vh; /* Ensure it takes up a good portion of the viewport height */
+    overflow: hidden; /* Ensures the pseudo-element doesn't overflow */
+}
+
+/* Create the dark blue overlay effect using a pseudo-element */
+.hero-image-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* Use the primary color (Navy Blue) with 70% opacity */
+    background-color: rgba(29, 53, 87, 0.85); /* 85% opacity */
+    z-index: 1;
+}
+
+/* Ensure content is above the overlay */
+.hero-image-overlay .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Modify the Hero Text Gradient for high contrast on a dark background */
+.hero-text-gradient {
+    /* Gradient from light accent to white, making it pop */
+    background: -webkit-linear-gradient(left, var(--bt-secondary), var(--white-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900 !important;
+}
+
+/* Modify the outline button to look good on the dark background */
+.btn-outline-bt-accent {
+    color: var(--bt-secondary); /* Use the light secondary color for visibility */
+    border-color: var(--bt-secondary);
+    padding: 0.75rem 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-bt-accent:hover {
+    background-color: var(--bt-accent); /* Use Mid Blue accent for solid hover */
+    border-color: var(--bt-accent);
+    color: var(--white-color);
+}
+
+/* 4. General Typography and Color Utilities */
+.text-bt-primary { color: var(--bt-primary) !important; }
+.text-bt-accent { color: var(--bt-accent) !important; }
+.bg-bt-light { background-color: var(--bt-light) !important; }
+.bg-bt-secondary { background-color: var(--bt-secondary) !important; }
+
+/* 5. Custom Buttons (Matching the Bootstrap aesthetic) */
+.custom-btn {
+    display: inline-block;
+    background-color: var(--bt-accent); /* Using Accent for solid button now */
+    color: var(--white-color);
+    padding: 0.75rem 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    border: 2px solid var(--bt-accent);
+    text-decoration: none;
+}
+
+.custom-btn:hover {
+    background-color: var(--bt-primary);
+    border-color: var(--bt-primary);
+    color: var(--white-color);
+    transform: translateY(-2px);
+}
+
+/* 6. Services Section Icons & Cards */
+.service-icon {
+    font-size: 3rem;
+    color: var(--bt-accent); /* Mid blue accent for icons */
+}
+
+.service-icon-small {
+    font-size: 1.5rem;
+    color: var(--bt-accent);
+}
+
+.bt-list-items li {
+    padding-left: 0;
+    margin-bottom: 0.5rem;
+}
+
+.bt-list-items li i {
+    font-size: 1.1rem;
+}
+
+.expertise-tag {
+    background-color: var(--bt-secondary);
+    color: var(--bt-primary);
+    padding: 0.3rem 0.8rem;
+    border-radius: 0.3rem;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+
+/* 7. Advanced Card Effect (Magic Border) */
+.card-magic-border {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--white-color);
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-radius: 0.75rem;
+    transition: all 0.5s ease;
+}
+
+.card-magic-border::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+        transparent 0deg,
+        transparent 100deg,
+        var(--bt-accent) 180deg,
+        var(--bt-primary) 260deg,
+        var(--bt-accent) 360deg
+    );
+    z-index: 0;
+    opacity: 0.1;
+    transition: opacity 0.5s;
+    border-radius: inherit;
+    transform: rotate(0deg);
+}
+
+.card-magic-border:hover::before {
+    opacity: 0.3;
+    animation: rotate 4s linear infinite;
+}
+
+.card-magic-border .card-content {
+    position: relative;
+    z-index: 10;
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.card-magic-border:hover {
+    box-shadow: 0 10px 30px rgba(69, 123, 157, 0.2);
+    transform: translateY(-5px);
+}
+
+/* 8. Contact Form Styling */
+.custom-form .form-control, .custom-form .form-select {
+    border-color: var(--bt-secondary);
+    box-shadow: none;
+}
+
+.custom-form .form-control:focus, .custom-form .form-select:focus {
+    border-color: var(--bt-accent);
+    box-shadow: 0 0 0 0.25rem rgba(69, 123, 157, 0.25);
+}
+
+/* 9. Accordion Custom Styling */
+.accordion-button {
+    background-color: var(--bt-light);
+    color: var(--bt-primary);
+    font-weight: 600;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: var(--bt-accent);
+    color: var(--white-color);
+    box-shadow: none;
+}
+
+.accordion-button:focus {
+    border-color: var(--bt-accent);
+    box-shadow: none;
+}
+
+.accordion-body {
+    background-color: var(--white-color);
+}
+
+
+
+/* --- END UPDATED CSS ADDITIONS (V2) --- */
+/* * Professional Tech Footer Styles
+ * Uses a dark, modern palette suitable for a software development company.
+ */
+
+/* Define the Corporate Dark Palette for consistency */
+:root {
+    --tech-dark-bg: #1A1A1A;     /* Primary dark background */
+    --tech-primary: #1D3557;     /* Deep Corporate Blue (from your files) */
+    --tech-accent: #457B9D;      /* Mid Blue Accent (from your files) */
+    --text-light: #89b8e7;       /* Off-White text */
+    --text-muted: rgba(255, 255, 255, 0.6); /* Slightly greyed-out text */
+}
+
+/* Base Footer Styling */
+.tech-footer {
+    background-color: var(--tech-dark-bg) !important;
+    color: var(--text-light);
+    font-family: 'Metropolis', sans-serif; /* Assuming Metropolis is loaded */
+}
+
+/* Divider Line *//*----------------------------------------------
+   ABOUT-US SECTION (MODERN, PREMIUM, CLEAN UI)
+------------------------------------------------*/
+
+/*----------------------------------------------
+   CENTERED VISION BANNER (MODERN, CLEAN)
+------------------------------------------------*/
+.vision-banner-centered {
+    background: var(--bt-primary);
+    color: #ffffff;
+    border-radius: 0.75rem;
+    text-align: center;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    padding: 1.8rem 1.5rem;
+}
+
+/* Vision Title */
+.vision-banner-centered .vision-title {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+.vision-banner-centered .vision-title {
+    color: #ffffff !important;
+}
+
+/* Vision Icon */
+.vision-banner-centered .vision-icon {
+    font-size: 2rem;
+    color: #ffffff;
+    opacity: 0.9;
+}
+
+/* Text styling */
+.vision-banner-centered p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Mobile adjustments */
+@media (max-width: 767px) {
+    .vision-banner-centered {
+        padding: 1.5rem 1.25rem;
+    }
+
+    .vision-banner-centered .vision-title {
+        font-size: 1.1rem;
+    }
+
+    .vision-banner-centered .vision-icon {
+        font-size: 1.8rem;
+    }
+}
+
+
+/* Layout spacing */
+#about-us .section-heading {
+    font-weight: 700;
+    color: var(--bt-primary);
+}
+
+/* Text improvements */
+#about-us p.lead {
+    font-size: 1.1rem;
+    line-height: 1.65;
+    font-weight: 500;
+}
+
+/* Modern muted paragraph */
+#about-us p.text-muted {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #6c7a8a;
+}
+
+/*----------------------------------------------
+   IMAGE FIXED-ASPECT RATIO WRAPPER (V2)
+------------------------------------------------*/
+.image-aspect-ratio-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 70%; /* 16:10 look for a modern banner-like image */
+    overflow: hidden;
+    border-radius: 0.9rem;
+    background-color: var(--bt-primary);
+    transition: transform 0.3s ease;
+}
+
+.image-aspect-ratio-wrapper img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.45s ease;
+}
+
+.image-aspect-ratio-wrapper:hover img {
+    transform: scale(1.05);
+}
+
+/*----------------------------------------------
+   VISION BANNER (SOLID BLUE VERSION)
+------------------------------------------------*/
+.key-purpose-box-v2 {
+    background: var(--bt-primary); /* Solid corporate blue */
+    color: #ffffff;
+    border-radius: 0.65rem;
+    padding: 1rem 1.25rem;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.key-purpose-box-v2 i {
+    font-size: 1.6rem;
+    color: #ffffff; /* Ensure the rocket icon is white */
+}
+
+.key-purpose-box-v2 span {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+
+/*----------------------------------------------
+   LIST STYLE (ICONS + CLEAN ALIGNMENT)
+------------------------------------------------*/
+.bt-list-items li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #333;
+    display: flex;
+    align-items: flex-start;
+    line-height: 1.45;
+}
+
+.bt-list-items li i {
+    font-size: 1.25rem;
+    margin-top: 2px;
+}
+
+/*----------------------------------------------
+   MOBILE RESPONSIVENESS
+------------------------------------------------*/
+@media (max-width: 767px) {
+    #about-us .section-heading {
+        font-size: 1.8rem;
+    }
+
+    #about-us p.lead {
+        font-size: 1rem;
+    }
+
+    .key-purpose-box-v2 {
+        flex-direction: row;
+        padding: 0.9rem;
+    }
+
+    .image-aspect-ratio-wrapper {
+        padding-bottom: 80%; /* Slightly taller image for mobile */
+    }
+}
+
+/* New Map Container Style */
+.tech-footer .map-container {
+    overflow: hidden;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.tech-footer .map-container iframe {
+    /* Ensures the iframe is responsive and contained */
+    display: block;
+}
+
+.tech-footer .border-top {
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Section Headings */
+.tech-footer .footer-heading {
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--text-light);
+    border-left: 3px solid var(--tech-accent); /* Subtle accent line */
+    padding-left: 10px;
+}
+
+/* Link Styling and Hover Effect */
+.tech-footer .footer-list {
+    padding-left: 0;
+}
+
+.tech-footer .footer-list li {
+    margin-bottom: 8px;
+}
+
+.tech-footer .footer-link {
+    color: var(--text-muted) !important; /* Muted color for default links */
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+    position: relative;
+    /* Remove default Bootstrap text-decoration on hover */
+    text-decoration: none !important;
+}
+
+.tech-footer .footer-link:hover {
+    color: var(--tech-accent) !important; /* Accent color on hover */
+    transform: translateX(5px); /* Small slide effect on hover */
+}
+
+/* Icon Styling (Contact and Social) */
+.tech-footer .text-accent {
+    color: var(--tech-accent) !important; /* Use accent color for icons */
+}
+
+.tech-footer .footer-social-icon {
+    font-size: 1.5rem;
+    color: var(--text-muted) !important;
+    transition: color 0.3s ease;
+}
+
+.tech-footer .footer-social-icon:hover {
+    color: var(--tech-accent) !important;
+}
+
+/* Newsletter Input & Button */
+.tech-footer .footer-form-control {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-light);
+    border-radius: 0.25rem 0 0 0.25rem; /* Match button corner */
+}
+
+.tech-footer .footer-form-control::placeholder {
+    color: var(--text-muted);
+}
+
+.tech-footer .footer-form-control:focus {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: var(--tech-accent);
+    box-shadow: 0 0 0 0.25rem rgba(69, 123, 157, 0.25); /* Subtle glow */
+}
+
+.tech-footer .btn-accent {
+    background-color: var(--tech-accent);
+    color: var(--text-light);
+    border: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.tech-footer .btn-accent:hover {
+    background-color: #3b6b8b; /* Slightly darker shade of accent on hover */
+}
+
+/* --- NEW CSS ADDITIONS FOR EXPERTISE & CSR POLISH --- */
+
+/* 12. Expertise Blocks for sleek presentation of information */
+.expertise-block {
+    border: 1px solid var(--bt-gray-light);
+    transition: all 0.3s ease;
+    /* Clean, defined look */
+}
+
+/* 13. Expertise Icon Styling */
+.expertise-icon-bg {
+    font-size: 1.5rem;
+    color: var(--bt-primary); /* Primary color for the icon */
+}
+
+.expertise-icon-bg-accent {
+    font-size: 1.5rem;
+    color: var(--bt-accent); /* Accent color for the icon */
+}
+
+/* 14. Polished Expertise Tags (Sleek, corporate look) */
+.expertise-tag-v2 {
+    display: inline-block;
+    padding: 0.4rem 0.9rem;
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--bt-primary);
+    background-color: var(--bt-gray-light);
+    border-radius: 25px; /* Pill shape */
+    border: 1px solid var(--bt-primary);
+    transition: all 0.3s ease;
+}
+
+.expertise-tag-v2:hover {
+    color: white;
+    background-color: var(--bt-primary);
+    cursor: default;
+}
+
+
+/* 15. Corporate Accordion Style */
+.corporate-accordion {
+    border: 1px solid var(--bt-gray-light);
+    border-radius: 0.5rem;
+    overflow: hidden; /* Ensures border-radius applies to all corners */
+}
+
+.corporate-accordion .accordion-item {
+    border-top: none; /* Remove default top border */
+    border-bottom: 1px solid var(--bt-gray-light);
+}
+
+.corporate-accordion .accordion-item:last-child {
+    border-bottom: none; /* Remove border from the last item */
+}
+
+.corporate-accordion .accordion-button {
+    background-color: white;
+    color: var(--bt-primary); /* Dark text for clean look */
+    font-weight: 600;
+    padding: 1rem 1.25rem;
+    transition: background-color 0.3s;
+}
+
+.corporate-accordion .accordion-button:not(.collapsed) {
+    background-color: var(--bt-light); /* Light background when open */
+    color: var(--bt-accent); /* Accent color when open */
+    box-shadow: none;
+    border-bottom: 1px solid var(--bt-gray-light);
+}
+
+.corporate-accordion .accordion-button:focus {
+    box-shadow: none;
+}
+
+.corporate-accordion .accordion-body {
+    background-color: var(--bt-light);
+    border-left: 4px solid var(--bt-accent); /* Small accent line */
+    padding: 1rem 1.25rem 1rem 1.75rem;
+    color: #495057; /* Slightly darker text for body */
+}
+
+.accordion-icon {
+    font-size: 1.25rem;
+    color: var(--bt-primary);
+    margin-right: 0.75rem;
+    width: 30px; /* fixed width for alignment */
+    text-align: center;
+}
+
+.corporate-accordion .accordion-button:not(.collapsed) .accordion-icon {
+    color: var(--bt-accent); /* Change icon color when active */
+}
+
+/* --- END NEW CSS ADDITIONS --- */
+
+/* --- NEW CSS ADDITIONS FOR POLISHED CONTACT SECTION --- */
+
+/* 16. Contact Card Structure and Hover Effect */
+.contact-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Ensures the card height matches in the grid */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05) !important; 
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    /* Lighter shadow on hover for a lift effect */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1) !important; 
+}
+
+/* Large Icon Style for Cards */
+.contact-icon-large {
+    font-size: 2.5rem;
+    color: var(--white-color); /* Mid Blue Accent */
+    display: inline-block;
+}
+
+/* Gradient Background for Accent Card (Requested Polish) */
+.contact-gradient-bg {
+    /* Subtle corporate blue gradient for a sleek look */
+    background: linear-gradient(45deg, var(--bt-primary), var(--bt-accent));
+    color: var(--white-color) !important;
+}
+
+.contact-gradient-bg .contact-icon-large {
+    color: var(--white-color); /* White icon on dark background */
+}
+
+/* Custom Button Outline (matching corporate primary color) */
+.btn-outline-bt-primary {
+    color: var(--bt-primary);
+    border-color: var(--bt-primary);
+}
+
+.btn-outline-bt-primary:hover {
+    color: var(--white-color);
+    background-color: var(--bt-primary);
+    border-color: var(--bt-primary);
+}
+
+/* Full Width Map Container Style */
+.map-full-width {
+    overflow: hidden;
+    /* Ensure border-radius applies to iframe */
+    border-radius: 0.5rem; 
+    border: 1px solid var(--bt-secondary);
+}
+/* --- END NEW CSS ADDITIONS --- */
+
+/* --- NEW CONTACT PAGE STYLING (For contact-us.html) --- */
+
+/* Ensures the contact section uses the primary light background color */
+.contact-section {
+    background-color: var(--bt-light);
+}
+
+/* Style for the info wrap container, using a light shadow for depth */
+.contact-info-wrap {
+    background-color: var(--white-color);
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    height: 100%;
+}
+
+/* Style for the map container to ensure responsiveness (shorter height) */
+.map-responsive {
+    overflow: hidden;
+    padding-bottom: 40%; /* REDUCED HEIGHT: Changed from 56.25% to 40% for a shorter, wider map */
+    position: relative;
+    height: 0;
+}
+
+.map-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    border: 0;
+    border-radius: 0.75rem; /* Matches the container's border-radius */
+}
+
+/* Specific styling for the contact icons in the info column */
+.contact-icon {
+    font-size: 2.5rem; /* Slightly larger for prominence */
+    color: var(--bt-accent); /* Mid Blue Accent */
+    display: block; /* Ensure it takes up full width for centering */
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1;
+}
+
+/* Mobile adjustments for padding */
+@media (max-width: 767px) {
+    .contact-info-wrap {
+        padding: 1.5rem !important; /* Slightly reduced padding on mobile */
+    }
+}
