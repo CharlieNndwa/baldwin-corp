@@ -1,0 +1,363 @@
+/*
+ * Final, Polished and Vibrant CSS for the Group Structure Page
+ * File: group_structure_final.css
+ * This file should be linked *after* style.css for overriding.
+ */
+
+/* --- CUSTOM THEME COLORS --- */
+:root {
+    --white-color: #ffffff;
+    --bt-dark: #1f3750; /* Deep Corporate Blue */
+    --bt-secondary: #00bcd4; /* Accent for Hover/Focus */
+    
+    /* Technology Palette (Cool Blue/Teal - Sleek & Modern) */
+    --tech-main: #0d47a1; /* Dark Blue */
+    --tech-accent: #42a5f5; /* Light Blue */
+    --tech-bg: #e3f2fd; /* Very Light Blue */
+
+    /* Industrial Palette (Warm Orange/Copper - Robust & Grounded) */
+    --industrial-main: #ff8f00; /* Deep Orange */
+    --industrial-accent: #ffb74d; /* Light Orange */
+    --industrial-bg: #fff3e0; /* Very Light Orange */
+}
+
+
+/* --- HERO SECTION --- */
+.group-structure-hero {
+    /* Use a linear-gradient with dark colors (0.7 opacity) on top of the image URL */
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), 
+                url('https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); 
+    
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Optional: Makes the image fixed when scrolling */
+    padding: 120px 0;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.group-structure-hero h1 {
+    font-weight: 900;
+    font-size: 3.5rem;
+    letter-spacing: 2px;
+    /* Adding a subtle text shadow for better contrast against the overlay */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); 
+}
+
+
+/* --- OVERVIEW SECTION --- */
+.group-overview-section {
+    background-color: var(--white-color); 
+    padding-bottom: 30px;
+}
+
+.section-title-gradient {
+    /* Use a color gradient for the title */
+    background: linear-gradient(to right, var(--bt-dark), var(--bt-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+}
+
+.corporate-text {
+    color: #444;
+}
+
+/* --- ORGANIZATIONAL TREE STRUCTURE --- */
+.org-tree-section {
+    background-color: #f7f9fc; /* Very light background for the tree area */
+}
+
+.tree-title {
+    color: var(--bt-dark);
+    font-weight: 800;
+    margin-bottom: 70px !important; /* Extra space to separate from structure */
+}
+
+.org-tree-container {
+    padding: 50px 0;
+    position: relative;
+    overflow-x: auto; 
+    min-width: 1000px; /* Ensure space for the full structure on large screens */
+}
+
+
+/* --- LEVEL 1: HOLDING COMPANY --- */
+.org-holding-box {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.org-holding {
+    /* Gradient, shadow, and accent border for premium feel */
+    background: linear-gradient(90deg, #2c3e50 0%, var(--bt-dark) 100%);
+    color: var(--white-color);
+    padding: 20px 40px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 3px solid var(--bt-secondary);
+    min-width: 380px;
+}
+
+.holding-logo {
+    width: 35px;
+    height: 35px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.org-holding small {
+    font-size: 0.9rem;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+/* Line connecting Holding to Subsidiaries */
+.org-holding-box::after {
+    content: '';
+    position: absolute;
+    bottom: -50px; 
+    width: 4px; /* Thicker line */
+    height: 50px;
+    background-color: var(--bt-dark);
+    border-radius: 2px;
+}
+
+
+/* --- LEVEL 2 & 3: SUBSIDIARIES & UNITS --- */
+.org-subsidiaries-container {
+    display: flex;
+    justify-content: center;
+    gap: 80px; 
+    position: relative;
+    padding-top: 0;
+}
+
+/* Horizontal line connection between subsidiaries */
+.org-subsidiaries-container::before {
+    content: '';
+    position: absolute;
+    top: 0; 
+    width: 100%; 
+    max-width: 800px; 
+    height: 4px;
+    background-color: var(--bt-dark);
+    z-index: 1; 
+}
+
+.org-tree-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    min-width: 450px; 
+    z-index: 2; 
+    padding-top: 0;
+}
+
+/* Vertical line connecting column to the horizontal line */
+.org-tree-column::before {
+    content: '';
+    position: absolute;
+    top: -4px; /* Align with the horizontal line */
+    width: 4px;
+    height: 4px;
+    background-color: var(--bt-dark);
+    border-radius: 50%; /* Circle connector */
+}
+
+
+/* SUBSIDIARY HEADER BOX (Level 2) */
+.tree-header {
+    color: var(--white-color);
+    padding: 18px 30px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1.4rem;
+    text-align: center;
+    min-width: 300px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    margin-bottom: 10px;
+    transform: translateY(-20px); /* Lift boxes slightly above the connection line */
+}
+
+.corp-note {
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 20px;
+}
+
+/* Tech Colors */
+.tech-header {
+    background: linear-gradient(135deg, var(--tech-main) 0%, var(--tech-accent) 100%);
+    border: 2px solid var(--tech-accent);
+}
+.tech-note {
+    color: var(--tech-main);
+}
+.tech-line {
+    background-color: var(--tech-main) !important;
+}
+
+/* Industrial Colors */
+.industrial-header {
+    background: linear-gradient(135deg, var(--industrial-main) 0%, var(--industrial-accent) 100%);
+    border: 2px solid var(--industrial-accent);
+}
+.industrial-note {
+    color: var(--industrial-main);
+}
+.industrial-line {
+    background-color: var(--industrial-main) !important;
+}
+
+
+/* Vertical Line Connector (Subsidiary to Units) */
+.org-vertical-line {
+    width: 4px;
+    height: 40px;
+    margin: 10px 0;
+    border-radius: 2px;
+}
+
+
+/* Business Units Row (Level 3) */
+.org-tree-units-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; 
+    gap: 12px;
+    padding-top: 10px;
+    max-width: 450px; /* Constrain units width */
+}
+
+.org-unit {
+    background-color: var(--white-color);
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #444;
+    text-align: center;
+    min-width: 190px;
+    transition: all 0.3s ease;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.org-unit i {
+    font-size: 1rem;
+    margin-right: 8px;
+}
+
+/* Unit Hover Effects - Color Coded */
+.unit-tech:hover {
+    background-color: var(--tech-main);
+    color: var(--white-color);
+    border-color: var(--tech-main);
+    transform: scale(1.03);
+    box-shadow: 0 4px 10px rgba(13, 71, 161, 0.4);
+}
+
+.unit-industrial:hover {
+    background-color: var(--industrial-main);
+    color: var(--white-color);
+    border-color: var(--industrial-main);
+    transform: scale(1.03);
+    box-shadow: 0 4px 10px rgba(255, 143, 0, 0.4);
+}
+
+
+/* Corroborating Content Box */
+.tree-details-box {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 450px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+.tree-details-box p {
+    margin-bottom: 0;
+    color: #555;
+}
+
+.tech-details {
+    background-color: var(--tech-bg);
+    border-top: 4px solid var(--tech-main);
+}
+.industrial-details {
+    background-color: var(--industrial-bg);
+    border-top: 4px solid var(--industrial-main);
+}
+
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+@media (max-width: 1200px) {
+    .org-tree-container {
+        min-width: unset; /* Allow container to shrink */
+        padding: 50px 15px;
+    }
+
+    .org-subsidiaries-container {
+        flex-direction: column; 
+        gap: 80px; 
+        padding-top: 30px; 
+    }
+
+    /* Hide the horizontal line on stacking */
+    .org-subsidiaries-container::before {
+        display: none;
+    }
+
+    /* Adjust holding co line */
+    .org-holding-box::after {
+        bottom: -30px;
+        height: 30px;
+    }
+
+    /* Connector line between the two stacked trees */
+    .bt-column::after {
+        content: '';
+        position: absolute;
+        bottom: -50px; 
+        left: 50%;
+        transform: translateX(-50%);
+        width: 4px;
+        height: 50px;
+        background-color: var(--bt-dark);
+        z-index: 1;
+        border-radius: 2px;
+    }
+    
+    .org-tree-column {
+        min-width: 90%; 
+    }
+    .org-tree-column::before {
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .org-holding, .tree-header {
+        min-width: 95%;
+        padding: 15px 10px;
+        font-size: 1.2rem;
+    }
+    .org-unit {
+        min-width: 100%; 
+        font-size: 0.9rem;
+        padding: 12px 10px;
+    }
+    .group-structure-hero h1 {
+        font-size: 2.5rem;
+    }
+}
